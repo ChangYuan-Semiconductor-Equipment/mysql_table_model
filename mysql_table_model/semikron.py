@@ -71,6 +71,7 @@ class Recipe(BASE):
     __tablename__ = "recipe"
 
     id = Column(Integer, primary_key=True, unique=True, nullable=False, autoincrement=True)
+    recipe_id = Column(Integer, nullable=True)
     recipe_name = Column(String(50), nullable=True)
     recipe_state = Column(Integer, nullable=True, default=1)
     updated_at = Column(DateTime, default=datetime.datetime.now(), onupdate=datetime.datetime.now())
