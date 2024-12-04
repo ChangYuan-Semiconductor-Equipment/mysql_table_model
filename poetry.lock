@@ -87,6 +87,36 @@ docs = ["Sphinx", "furo"]
 test = ["objgraph", "psutil"]
 
 [[package]]
+name = "mysql-api"
+version = "0.1.2"
+description = "封装mysql操作"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mysql_api-0.1.2-py3-none-any.whl", hash = "sha256:33fd6cebea43cbd0487f25c5f2534f0b8dcf58c77e429d16723247fe7d01137a"},
+    {file = "mysql_api-0.1.2.tar.gz", hash = "sha256:8b2424e85ccd0a40015b56be7bbf4480460169013e4adf6f591af41c2e3c1076"},
+]
+
+[package.dependencies]
+pymysql = ">=1.1.1,<2.0.0"
+sqlalchemy = ">=2.0.36,<3.0.0"
+
+[[package]]
+name = "pymysql"
+version = "1.1.1"
+description = "Pure Python MySQL Driver"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "PyMySQL-1.1.1-py3-none-any.whl", hash = "sha256:4de15da4c61dc132f4fb9ab763063e693d521a80fd0e87943b9a453dd4c19d6c"},
+    {file = "pymysql-1.1.1.tar.gz", hash = "sha256:e127611aaf2b417403c60bf4dc570124aeb4a57f5f37b8e95ae399a42f904cd0"},
+]
+
+[package.extras]
+ed25519 = ["PyNaCl (>=1.4.0)"]
+rsa = ["cryptography"]
+
+[[package]]
 name = "sqlalchemy"
 version = "2.0.36"
 description = "Database Abstraction Library"
@@ -195,4 +225,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "63f91f6aab6d51e392a44cf1e12dc5fb01e4e442aa2c45f7b75a14fcbe0e9c6e"
+content-hash = "b1d989de05331434d61156541b17f989b5b9b528143e5fa7116b43487b05a0a3"

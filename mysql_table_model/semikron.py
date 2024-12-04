@@ -20,8 +20,8 @@ class DbcLinkTray(BASE):
     tray_index = Column(Integer, nullable=True)
     lot_name = Column(String(50), nullable=True)
     lot_article_name = Column(String(50))
-    updated_at = Column(DateTime, default=datetime.datetime.now(), onupdate=datetime.datetime.now())
-    created_at = Column(DateTime, default=datetime.datetime.now(datetime.timezone.utc))
+    updated_at = Column(DateTime, default=lambda: datetime.datetime.now(), onupdate=lambda: datetime.datetime.now())
+    created_at = Column(DateTime, default=lambda: datetime.datetime.now())
 
     def as_dict(self):
         """获取字典形式的数据."""
@@ -39,8 +39,8 @@ class LotInfo(BASE):
     lot_state = Column(Integer, nullable=True, default=1)
     recipe_name = Column(String(50), nullable=True)
     point_name = Column(String(50), nullable=True)
-    updated_at = Column(DateTime, default=datetime.datetime.now(), onupdate=datetime.datetime.now())
-    created_at = Column(DateTime, default=datetime.datetime.now())
+    updated_at = Column(DateTime, default=lambda: datetime.datetime.now(), onupdate=lambda: datetime.datetime.now())
+    created_at = Column(DateTime, default=lambda: datetime.datetime.now())
 
     def as_dict(self):
         """获取字典形式的数据."""
@@ -58,8 +58,8 @@ class Point(BASE):
     y_point = Column(Float, nullable=True, default=0)
     x_mark_point = Column(Float, nullable=True, default=0)
     y_mark_point = Column(Float, nullable=True, default=0)
-    updated_at = Column(DateTime, default=datetime.datetime.now(), onupdate=datetime.datetime.now())
-    created_at = Column(DateTime, default=datetime.datetime.now())
+    updated_at = Column(DateTime, default=lambda: datetime.datetime.now(), onupdate=lambda: datetime.datetime.now())
+    created_at = Column(DateTime, default=lambda: datetime.datetime.now())
 
     def as_dict(self):
         """获取字典形式的数据."""
@@ -74,8 +74,8 @@ class Recipe(BASE):
     recipe_id = Column(Integer, nullable=True)
     recipe_name = Column(String(50), nullable=True)
     recipe_state = Column(Integer, nullable=True, default=1)
-    updated_at = Column(DateTime, default=datetime.datetime.now(), onupdate=datetime.datetime.now())
-    created_at = Column(DateTime, default=datetime.datetime.now())
+    updated_at = Column(DateTime, default=lambda: datetime.datetime.now(), onupdate=lambda: datetime.datetime.now())
+    created_at = Column(DateTime, default=lambda: datetime.datetime.now())
 
     def as_dict(self):
         """获取字典形式的数据."""
