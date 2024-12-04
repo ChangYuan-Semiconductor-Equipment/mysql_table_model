@@ -8,7 +8,7 @@ from sqlalchemy.orm import declarative_base
 BASE = declarative_base()
 
 
-# pylint: disable=R0903
+# pylint: disable=R0903, disable=W0108
 class DbcLinkTray(BASE):
     """DbcLinkTray class."""
     __tablename__ = "dbc_link_tray"
