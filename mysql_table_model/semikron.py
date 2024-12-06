@@ -15,6 +15,7 @@ class DbcLinkTray(BASE):
 
     id = Column(Integer, primary_key=True, unique=True, nullable=False, autoincrement=True)
     dbc_code = Column(String(50), nullable=True)
+    carrier_id = Column(String(50), nullable=True)
     dbc_state = Column(Integer, nullable=True)
     tray_code = Column(String(50), nullable=True)
     tray_index = Column(Integer, nullable=True)
@@ -53,11 +54,16 @@ class Point(BASE):
 
     id = Column(Integer, primary_key=True, unique=True, nullable=False, autoincrement=True)
     point_name = Column(String(50), nullable=True)
-    point_state = Column(Integer, nullable=True, default=1)
     x_point = Column(Float, nullable=True, default=0)
     y_point = Column(Float, nullable=True, default=0)
     x_mark_point = Column(Float, nullable=True, default=0)
     y_mark_point = Column(Float, nullable=True, default=0)
+    recipe_name = Column(String(50), nullable=True)
+    reserve_1 = Column(Integer, nullable=True, default=0)
+    reserve_2 = Column(Integer, nullable=True, default=0)
+    reserve_3 = Column(Integer, nullable=True, default=0)
+    reserve_4 = Column(Integer, nullable=True, default=0)
+
     updated_at = Column(DateTime, default=lambda: datetime.datetime.now(), onupdate=lambda: datetime.datetime.now())
     created_at = Column(DateTime, default=lambda: datetime.datetime.now())
 
