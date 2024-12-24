@@ -3,6 +3,7 @@ import datetime
 
 from sqlalchemy import Column, String, Integer, DateTime, Float
 from sqlalchemy.orm import declarative_base
+from mysql_api.mysql_database import MySQLDatabase
 
 
 BASE = declarative_base()
@@ -59,10 +60,10 @@ class Point(BASE):
     x_mark_point = Column(Float, nullable=True, default=0)
     y_mark_point = Column(Float, nullable=True, default=0)
     recipe_name = Column(String(50), nullable=True)
-    reserve_1 = Column(Integer, nullable=True, default=0)
-    reserve_2 = Column(Integer, nullable=True, default=0)
-    reserve_3 = Column(Integer, nullable=True, default=0)
-    reserve_4 = Column(Integer, nullable=True, default=0)
+    robot_id = Column(Integer, nullable=True, default=0)
+    camera_id = Column(Integer, nullable=True, default=0)
+    in_rotation = Column(Integer, nullable=True, default=0)
+    out_rotation = Column(Integer, nullable=True, default=0)
 
     updated_at = Column(DateTime, default=lambda: datetime.datetime.now(), onupdate=lambda: datetime.datetime.now())
     created_at = Column(DateTime, default=lambda: datetime.datetime.now())
